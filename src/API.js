@@ -10,8 +10,8 @@ const API = axios.create(
   }
 );
 
-export const fetchProducts = () => {
-  const data = API.get("/products");
+export const fetchProducts = (page, per_page = 5) => {
+  const data = API.get(`/products?per_page=${per_page}&page=${page}`);
 
   return data;
 };
