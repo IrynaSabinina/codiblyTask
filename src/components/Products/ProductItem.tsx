@@ -26,29 +26,24 @@ export const ProductItem = ({
   };
   return (
     <>
-      <tbody>
-        <tr
-          style={{ backgroundColor: `${color}` }}
-          key={id}
-          onClick={openModal}
-        >
-          <td>{id}</td>
-          <td>{name}</td>
-          <td>{year}</td>
-        </tr>
-        {isOpen ? (
-          <Modal
-            id={id}
-            name={name}
-            year={year}
-            color={color}
-            pantone_value={pantone_value}
-            isClose={closeModal}
-          />
-        ) : (
-          <></>
-        )}
-      </tbody>
+      <tr style={{ backgroundColor: `${color}` }} key={id} onClick={openModal}>
+        <td>{id}</td>
+        <td>{name}</td>
+        <td>{year}</td>
+      </tr>
+
+      {isOpen ? (
+        <Modal
+          id={id}
+          name={name}
+          year={year}
+          color={color}
+          pantone_value={pantone_value}
+          isClose={closeModal}
+        />
+      ) : (
+        <></>
+      )}
     </>
   );
 };

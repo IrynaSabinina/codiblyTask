@@ -1,0 +1,9 @@
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  align-items: center;
+}
+.input {
+  padding: auto;
+}

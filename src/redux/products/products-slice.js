@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { combineReducers } from "@reduxjs/toolkit";
+
 import { getProducts, getProductsById } from "./products-operation";
 import { productsInitialState } from "./productsInitialState";
 const productsSlice = createSlice({
@@ -13,6 +13,7 @@ const productsSlice = createSlice({
   extraReducers: {
     [getProducts.fulfilled]: (state, { payload }) => {
       state.products = payload;
+      state.productById = null;
     },
     [getProductsById.fulfilled]: (state, { payload }) => {
       state.productById = payload;

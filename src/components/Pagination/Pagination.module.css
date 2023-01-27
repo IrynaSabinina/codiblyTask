@@ -1,0 +1,20 @@
+.paginationSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+}
+.paginationBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.paginationBtn:disabled {
+  fill: gray;
+}
+
+.iconRight {
+  display: inline;
+  transform: scaleX(-1);
+}

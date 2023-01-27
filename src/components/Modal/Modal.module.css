@@ -1,0 +1,40 @@
+.modalContainer {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  scroll-behavior: none;
+  background-color: rgba(5, 5, 5, 0.335);
+}
+.modalWindow {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  border-radius: 8px;
+}
+
+.closeBtn {
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+  transition: 1s;
+}
+.closeBtn:hover {
+  transform: scale(1.1);
+}
+
+
