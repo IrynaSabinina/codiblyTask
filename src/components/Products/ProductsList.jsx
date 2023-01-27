@@ -15,6 +15,7 @@ export const ProductsList = () => {
   const filteredProduct = useSelector(productsByIdSelector);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getProducts(1));
   }, []);
@@ -37,6 +38,7 @@ export const ProductsList = () => {
             name={filteredProduct.name}
             year={filteredProduct.year}
             color={filteredProduct.color}
+            pantone_value={filteredProduct.pantone_value}
           />
         ) : (
           products.data?.map((item) => {
@@ -47,6 +49,7 @@ export const ProductsList = () => {
                 name={item.name}
                 year={item.year}
                 color={item.color}
+                pantone_value={item.pantone_value}
               />
             );
           })
