@@ -1,12 +1,18 @@
 import "./App.css";
-import { Filter } from "./components/Filter/Filter.jsx";
-import { ProductsList } from "./components/Products/ProductsList";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
-      <Filter />
-      <ProductsList />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/products" element={<Home />} />
+        </Routes>
+        <ToastContainer />
+      </BrowserRouter>
     </>
   );
 }

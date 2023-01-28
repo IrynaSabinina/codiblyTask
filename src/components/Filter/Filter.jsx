@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getProductsById } from "../../redux/products/products-operation";
+
 import styles from "./Filter.module.css";
 
 import { filter } from "../../redux/products/products-slice";
@@ -15,7 +16,7 @@ export const Filter = () => {
     } else {
       dispatch(getProductsById(Number(filterVal)));
     }
-  }, [filterVal]);
+  }, [dispatch, filterVal]);
 
   const handleFilter = (e) => {
     console.log(e.target.value);

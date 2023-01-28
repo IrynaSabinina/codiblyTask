@@ -77,8 +77,8 @@ export const ProductsList = () => {
       ) : (
         <Pagination
           currentPage={page}
-          onClick={paginationNext}
-          onSubmit={paginationPrev}
+          next={paginationNext}
+          prev={paginationPrev}
         />
       )}
     </>

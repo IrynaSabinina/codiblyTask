@@ -6,22 +6,18 @@ import IconSVG from "../../icons/sprite.svg";
 
 export interface PaginationProps {
   currentPage: number;
-  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
-  onSubmit?: MouseEventHandler<HTMLButtonElement> | undefined;
+  next?: MouseEventHandler<HTMLButtonElement> | undefined;
+  prev?: MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
-export const Pagination = ({
-  currentPage,
-  onClick,
-  onSubmit,
-}: PaginationProps) => {
+export const Pagination = ({ currentPage, next, prev }: PaginationProps) => {
   const products = useSelector(productsSelector);
   return (
     <>
       <section className={styles.paginationSection}>
         <button
           className={styles.paginationBtn}
-          onClick={onSubmit}
+          onClick={prev}
           disabled={currentPage === 1}
         >
           <svg className={styles.icon} height="20px" width="20px">
@@ -31,7 +27,7 @@ export const Pagination = ({
         <div>... {currentPage} ...</div>
         <button
           className={styles.paginationBtn}
-          onClick={onClick}
+          onClick={next}
           disabled={currentPage === products.total_pages}
         >
           <svg className={styles.iconRight} height="20px" width="20px">

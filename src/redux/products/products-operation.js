@@ -1,4 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { fetchProducts, fetchProductsById } from "../../API";
 
@@ -8,7 +10,9 @@ export const getProducts = createAsyncThunk("products", async (page = 1) => {
     return data;
   } catch (error) {
     if (error.response.status === 404 || error.response.status === 500) {
-      alert("Ooops, sory try again later");
+      toast.error("Ooops, sory try again later", {
+        theme: "colored",
+      });
     }
   }
 });
@@ -19,10 +23,14 @@ export const getProductsById = createAsyncThunk("products/id", async (id) => {
     return data.data;
   } catch (error) {
     if (error.response.status === 404) {
-      alert("try again but select between 1 and 12");
+      toast.warning("Oooopss, sory try again but select between 1 and 12", {
+        theme: "colored",
+      });
     }
     if (error.response.status === 500) {
-      alert("Sory try again later");
+      toast.error("Sory try again later, something wrong with server", {
+        theme: "colored",
+      });
     }
   }
 });
