@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/products" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Routes>
         <ToastContainer />
       </BrowserRouter>
