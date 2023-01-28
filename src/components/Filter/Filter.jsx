@@ -31,6 +31,7 @@ export const Filter = () => {
           type="number"
           name="filter"
           value={filterVal}
+          placeholder="just numbers"
           onChange={handleFilter}
         ></input>
       </label>
